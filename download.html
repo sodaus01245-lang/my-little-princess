@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>👑 마이 리틀 프린세스 다운로드</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    font-family: 'Malgun Gothic', 'Apple SD Gothic Neo', sans-serif;
+    background: radial-gradient(circle at 50% 25%, #FFF8EE 0%, #FCE3EC 55%, #EADCF8 100%);
+    color: #3A1D28;
+  }
+  .card {
+    max-width: 560px;
+    width: 100%;
+    background: linear-gradient(180deg, #FFFCF7 0%, #FFF3E4 100%);
+    border: 3px solid #C89B54;
+    border-radius: 26px;
+    padding: 36px 30px;
+    text-align: center;
+    box-shadow: 0 18px 45px rgba(85, 35, 55, 0.18), inset 0 0 0 2px #FFFDF9;
+  }
+  .crown { font-size: 3.2rem; margin-bottom: 6px; }
+  h1 {
+    margin: 0 0 10px;
+    font-size: 1.75rem;
+    color: #7A234A;
+    letter-spacing: -0.5px;
+  }
+  p.desc {
+    margin: 0 0 24px;
+    font-size: 1rem;
+    line-height: 1.6;
+    font-weight: 700;
+    color: #6B4252;
+  }
+  .btn {
+    display: block;
+    width: 100%;
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    border-radius: 16px;
+    text-decoration: none;
+    font-size: 1.12rem;
+    font-weight: 900;
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+    cursor: pointer;
+  }
+  .btn:hover { transform: translateY(-2px); }
+  .btn-main {
+    background: linear-gradient(135deg, #FF6FA5 0%, #D9437A 100%);
+    color: #FFFFFF;
+    border: 2px solid #B52B60;
+    box-shadow: 0 8px 20px rgba(217, 67, 122, 0.32);
+  }
+  .btn-zip {
+    background: linear-gradient(135deg, #EEFCF8 0%, #D1F5EA 100%);
+    color: #165B4C;
+    border: 2px solid #79CEB8;
+  }
+  .btn-play {
+    background: linear-gradient(135deg, #FFF5D6 0%, #FFE4A0 100%);
+    color: #6E470B;
+    border: 2px solid #D4A349;
+    margin-bottom: 0;
+  }
+  .guide {
+    margin-top: 22px;
+    padding: 14px 16px;
+    background: #FFFDF9;
+    border: 1.5px dashed #D8B47C;
+    border-radius: 14px;
+    text-align: left;
+    font-size: 0.9rem;
+    line-height: 1.65;
+    color: #5C3A47;
+    font-weight: 700;
+  }
+  .status {
+    display: inline-block;
+    margin-bottom: 16px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: #FFF0F6;
+    border: 1.5px solid #F4A9C7;
+    color: #B82962;
+    font-size: 0.88rem;
+    font-weight: 800;
+  }
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="crown">👑</div>
+    <h1>마이 리틀 프린세스</h1>
+    <div class="status" id="autoStatus">✨ 게임 파일 다운로드 준비 완료!</div>
+    <p class="desc">
+      파일 <b>딱 1개</b>만 받아서 바탕화면에 두고 <b>더블클릭</b>하면<br>
+      인터넷이나 설치 없이 어느 컴퓨터에서든 바로 실행됩니다!
+    </p>
+
+    <a id="dlHtmlBtn" class="btn btn-main" href="./MyLittlePrincess.html" download="마이리틀프린세스.html">
+      💾 게임 파일 다운로드 (마이리틀프린세스.html)
+    </a>
+
+    <a class="btn btn-zip" href="./MyLittlePrincess_PC.zip" download="마이리틀프린세스_다른PC전송용.zip">
+      📦 압축 파일(.zip)로 다운로드
+    </a>
+
+    <a class="btn btn-play" href="./index.html">
+      🎮 다운로드 없이 웹에서 바로 플레이하기
+    </a>
+
+    <div class="guide">
+      💡 <b>실행 방법 (초간단!)</b><br>
+      1. 위 핑크색 버튼을 눌러 <b>마이리틀프린세스.html</b> 파일을 받으세요.<br>
+      2. 다운로드 폴더(또는 바탕화면)에서 파일을 <b>더블클릭</b>하면 바로 시작됩니다!
+    </div>
+  </div>
+  <script>
+    window.addEventListener('load', () => {
+      setTimeout(() => {
+        const a = document.getElementById('dlHtmlBtn');
+        if (a) a.click();
+        const st = document.getElementById('autoStatus');
+        if (st) st.textContent = '💖 자동 다운로드가 시작되었어요! (안 받아지면 아래 핑크 버튼을 클릭하세요)';
+      }, 500);
+    });
+  </script>
+</body>
+</html>
